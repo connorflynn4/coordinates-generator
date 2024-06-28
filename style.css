@@ -1,18 +1,19 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'NTR', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
+    min-height: 100vh;
 }
 
 header {
     width: 100%;
     background-color: #007bff;
     color: white;
-    padding: 20px 0;
+    padding: 10px 0;
     text-align: center;
     font-size: 24px;
     font-weight: bold;
@@ -24,6 +25,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin: 20px 0;
+    flex-wrap: wrap;
 }
 
 .search-container, .button-container {
@@ -60,6 +62,7 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    flex: 1;
 }
 
 #map-container {
@@ -75,23 +78,15 @@ button:hover {
 
 #coordinates-table {
     width: 100%;
-    margin-top: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    padding: 10px;
     background-color: #fff;
-    max-height: 300px; 
-    overflow-y: auto; 
+    max-height: 300px;
+    overflow-y: auto;
 }
 
 #coordinates-table.hidden {
     display: none;
-}
-
-#coordinates-table h3 {
-    margin: 0;
-    padding-bottom: 10px;
-    text-align: center; 
 }
 
 table {
@@ -99,8 +94,57 @@ table {
     border-collapse: collapse;
 }
 
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    z-index: 10;
+    text-align: center;
+    padding: 10px;
+}
+
+thead tr:nth-child(2) th {
+    top: 40px;
+    z-index: 10;
+}
+
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
     text-align: left;
+    background-color: #fff;
+}
+
+footer {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container, .button-container {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"], button {
+        width: 100%;
+        max-width: 300px;
+        margin: 5px 0;
+        padding: 10px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

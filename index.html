@@ -6,6 +6,7 @@
     <title>Coordinates Generator</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=NTR&display=swap" />
 </head>
 <body>
     <header>
@@ -26,11 +27,13 @@
             <div id="map"></div>
         </div>
         <div id="coordinates-table" class="hidden">
-            <h3>Selected Coordinates</h3>
             <table>
                 <thead>
                     <tr>
-                        <th>Country</th>
+                        <th colspan="3">Selected Coordinates</th>
+                    </tr>
+                    <tr>
+                        <th></th>
                         <th>Latitude</th>
                         <th>Longitude</th>
                     </tr>
@@ -41,6 +44,9 @@
             </table>
         </div>
     </div>
+    <footer>
+        Built and designed by Connor Flynn. All rights reserved. ©
+    </footer>
     
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
