@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coordinates Generator</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        Coordinates Generator
+    </header>
+    <div class="menu">
+        <div class="search-container">
+            <input type="text" id="country-input" placeholder="Enter country name">
+            <button id="search">Search</button>
+        </div>
+        <div class="button-container">
+            <button id="export">Export to Excel</button>
+            <button id="clear">Clear Coordinates</button>
+        </div>
+    </div>
+    <div class="content">
+        <div id="map-container">
+            <div id="map"></div>
+        </div>
+        <div id="coordinates-table" class="hidden">
+            <h3>Selected Coordinates</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                    </tr>
+                </thead>
+                <tbody id="coordinates">
+                    <!-- Coordinates will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>
