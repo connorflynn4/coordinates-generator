@@ -12,7 +12,13 @@ var points = [];
 function onMapClick(e) {
     var latlng = e.latlng;
     points.push([latlng.lat, latlng.lng]);
-    L.marker(latlng).addTo(map);
+    var marker = L.marker(latlng).addTo(map);
+    marker.on('contextmenu', function() {
+        map.removeLayer(marker);
+        var index = points.findIndex(point => point[0] === latlng.lat && point[1] === latlng.lng);
+        if (index !== -1) points.splice(index, 1);
+        updateCoordinatesTable();
+    });
     updateCoordinatesTable();
 }
 
@@ -109,7 +115,6 @@ function searchCountry() {
         });
 }
 
-// Add event listeners for the search button and the "Enter" key
 document.getElementById('search').addEventListener('click', searchCountry);
 document.getElementById('country-input').addEventListener('keypress', function(e) {
     if (e.key === 'Enter') {
